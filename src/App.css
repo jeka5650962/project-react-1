@@ -1,38 +1,373 @@
-.App {
-  text-align: center;
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[class*="__container"] {
+    max-width: 1302px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: content-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ----------------------------------- page ----------------------------------- */
+
+.page {
+    padding: 64px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cameras__body {
+    display: flex;
+    column-gap: 36px;
 }
 
-.App-link {
-  color: #61dafb;
+.cameras__filter {
+    flex: 0 0 224px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cameras__count {
+    color: #898989;
+    line-height: 1.4;
+    margin: 0 0 5px 0;
+}
+
+.cameras__title {
+    line-height: 1.4;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0 0 13px 0;
+}
+
+.cameras__price {
+    display: flex;
+    margin: 0 0 24px 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border .2s ease-in;
+    position: relative;
+}
+
+.cameras__price::before {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background-color: #dbdbdb;
+    position: absolute;
+    left: 50%;
+}
+
+.cameras__price:hover {
+    border: 1px solid #a7a7a7;
+}
+
+.cameras__price:has(input:focus) {
+    border: 1px solid #a7a7a7;
+}
+
+.cameras__shortcut {
+    display: block;
+    margin: 0 0 12px 0;
+}
+
+.shortcut-style {
+    line-height: 1.4;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.cameras__price-input {
+    line-height: 1.4;
+    padding: 10px 12px;
+    max-width: 112px;
+    cursor: pointer;
+}
+
+.cameras__brand {
+    margin: 0 0 10px 0;
+}
+
+/* ----------------------------------- checkbox ----------------------------------- */
+
+.cameras__brand-label {
+    cursor: pointer;
+}
+
+.cameras__brand-label > .custom-checkbox {
+    transition: border .3s ease 0s;
+}
+
+.cameras__brand-label:hover > .custom-checkbox {
+    border: 1px solid #a7a7a7;
+}
+
+.real-checkbox {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.custom-checkbox {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    margin: 0 9px 0 0;
+    vertical-align: sub;
+    position: relative;
+}
+
+.custom-checkbox::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 9px;
+    background-image: url("./icons/check.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: .2s ease-in;
+}
+
+.real-checkbox:checked + .custom-checkbox {
+    background: #7993a6;
+    border: none;
+}
+
+.real-checkbox:disabled + .custom-checkbox {
+    cursor: auto;
+}
+
+.real-checkbox:checked + .custom-checkbox::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.real-checkbox:disabled + .custom-checkbox {
+    background: #dedede;
+    border: none;
+}
+
+/* ----------------------------------- checkbox ----------------------------------- */
+
+.cameras__items {
+    flex: 1 1 auto;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.item {
+    flex: 0 0 242px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item__body {
+    flex: 1 1 auto;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.item__novelty {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #fff;
+    background-color: #44c477;
+    border-radius: 26px;
+    width: 79px;
+    text-align: center;
+    padding: 5px 10px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.item__image {
+    height: 242px;
+    overflow: hidden;
+}
+
+.item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.item__info {
+    padding: 12px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.item__title {
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+    flex: 1 1 auto;
+}
+
+.item__price {
+    margin: 0 0 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item__new {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.item__btn {
+    line-height: 1.4;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 8px 15px;
+    background-color: transparent;
+    width: 106px;
+    transition: border .2s ease-in;
+}
+
+.item__btn:hover {
+    border: 1px solid #a7a7a7;
+}
+
+.item__like {
+    background: url("./icons/like-stroke.svg") 0 0 no-repeat;
+    width: 21px;
+    height: 18px;
+    cursor: pointer;
+    transition: scale .2s ease-in;
+}
+
+.item__like:hover {
+    scale: 1.1;
+}
+
+.item__like.active {
+    background: url("./icons/like-active.svg") 0 0 no-repeat;
+}
+
+/* ----------------------------------- @media ----------------------------------- */
+
+@media (max-width: 1341px) {
+    .cameras__items {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(242px, 1fr));
+    }
+}
+
+@media (max-width: 1076px) {
+    .cameras__items {
+        grid-template-columns: repeat(2, minmax(242px, 1fr));
+    }
+}
+
+@media (max-width: 810px) {
+    .page {
+        padding: 47px 0;
+    }
+
+    .cameras__body {
+        flex-direction: column;
+        column-gap: normal;
+    }
+
+    .cameras__filter {
+        flex: 0 1 auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .cameras__count {
+        order: 2;
+        margin: 0 0 18px 0;
+    }
+
+    .cameras__title {
+        order: 1;
+    }
+
+    .cameras__shortcut_1 {
+        order: 3;
+    }
+
+    .cameras__price {
+        width: 224px;
+        order: 4;
+    }
+
+    .cameras__shortcut_2 {
+        order: 5;
+    }
+
+    .cameras__brands {
+        order: 6;
+    }
+}
+
+@media (max-width: 548px) {
+    .cameras__items {
+        grid-template-columns: minmax(242px, 1fr);
+    }
+}
+
+@media (max-width: 375px) {
+    .cameras__filter {
+        margin-bottom: 0;
+    }
+
+    .cameras__items {
+        gap: normal;
+        flex: 0 1 auto;
+    }
+
+    .item {
+        flex-direction: row;
+        flex: 1 1 auto;
+        padding: 20px 0;
+    }
+
+    .item:not(:last-child) {
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .item__body {
+        flex-direction: row;
+        border: none;
+        border-radius: 0;
+    }
+
+    .item__image {
+        height: 124px;
+        flex: 0 0 124px;
+        border-radius: 4px;
+    }
+
+    .item__info {
+        padding: 0 0 0 16px;
+        height: 100%;
+    }
 }
