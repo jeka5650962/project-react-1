@@ -1,5 +1,58 @@
 import './App.css'
 
+function SideBar() {
+    return (
+        <div className="cameras__filter">
+            <div className="cameras__count">Товаров 143</div>
+            <h1 className="cameras__title">Камеры</h1>
+            <label htmlFor="min-price"
+                   className="cameras__shortcut cameras__shortcut_1 shortcut-style">Цена,
+                ₽</label>
+            <div className="cameras__price">
+                <input id="min-price" type="number" name="minimum-price" placeholder="0"
+                       className="cameras__price-input cameras__price-input_1"/>
+                <input id="max-price" type="number" name="maximum-price" placeholder="499000"
+                       className="cameras__price-input cameras__price-input_2"/>
+            </div>
+            <div className="cameras__shortcut cameras__shortcut_2 shortcut-style">Бренд</div>
+            <div className="cameras__brands">
+                <div className="cameras__brand">
+                    <label className="cameras__brand-label">
+                        <input type="checkbox" name="brand-canon" className="real-checkbox"/>
+                        <span className="custom-checkbox"></span>
+                        Canon
+                    </label>
+                </div>
+                <div className="cameras__brand">
+                    <label className="cameras__brand-label">
+                        <input type="checkbox" name="brand-nikon" className="real-checkbox"
+                               checked/>
+                        <span className="custom-checkbox"></span>
+                        Nikon
+                    </label>
+                </div>
+                <div className="cameras__brand">
+                    <label className="cameras__brand-label">
+                        <input type="checkbox" name="brand-sony" className="real-checkbox"
+                               disabled/>
+                        <span className="custom-checkbox"></span>
+                        Sony
+                    </label>
+                </div>
+                <div className="cameras__brand">
+                    <label className="cameras__brand-label">
+                        <input type="checkbox" name="brand-panasonic" className="real-checkbox"
+                               checked
+                               disabled/>
+                        <span className="custom-checkbox"></span>
+                        Olympus
+                    </label>
+                </div>
+            </div>
+        </div>
+    )
+}
+
 function App() {
     return (
         <div className="wrapper">
@@ -7,54 +60,7 @@ function App() {
                 <div className="cameras">
                     <div className="cameras__container">
                         <div className="cameras__body">
-                            <div className="cameras__filter">
-                                <div className="cameras__count">Товаров 143</div>
-                                <h1 className="cameras__title">Камеры</h1>
-                                <label htmlFor="min-price"
-                                       className="cameras__shortcut cameras__shortcut_1 shortcut-style">Цена,
-                                    ₽</label>
-                                <div className="cameras__price">
-                                    <input id="min-price" type="number" name="minimum-price" placeholder="0"
-                                           className="cameras__price-input cameras__price-input_1"/>
-                                    <input id="max-price" type="number" name="maximum-price" placeholder="499000"
-                                           className="cameras__price-input cameras__price-input_2"/>
-                                </div>
-                                <div className="cameras__shortcut cameras__shortcut_2 shortcut-style">Бренд</div>
-                                <div className="cameras__brands">
-                                    <div className="cameras__brand">
-                                        <label className="cameras__brand-label">
-                                            <input type="checkbox" name="brand-canon" className="real-checkbox"/>
-                                            <span className="custom-checkbox"></span>
-                                            Canon
-                                        </label>
-                                    </div>
-                                    <div className="cameras__brand">
-                                        <label className="cameras__brand-label">
-                                            <input type="checkbox" name="brand-nikon" className="real-checkbox"
-                                                   checked/>
-                                            <span className="custom-checkbox"></span>
-                                            Nikon
-                                        </label>
-                                    </div>
-                                    <div className="cameras__brand">
-                                        <label className="cameras__brand-label">
-                                            <input type="checkbox" name="brand-sony" className="real-checkbox"
-                                                   disabled/>
-                                            <span className="custom-checkbox"></span>
-                                            Sony
-                                        </label>
-                                    </div>
-                                    <div className="cameras__brand">
-                                        <label className="cameras__brand-label">
-                                            <input type="checkbox" name="brand-panasonic" className="real-checkbox"
-                                                   checked
-                                                   disabled/>
-                                            <span className="custom-checkbox"></span>
-                                            Olympus
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                            <SideBar/>
                             <div className="cameras__items">
                                 <div className="cameras__item item">
                                     <div className="item__body">
