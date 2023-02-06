@@ -1,17 +1,17 @@
-function CameraItem(props) {
+function CameraItem({title, price, image}) {
     return (
         <div className="cameras__item item">
             <div className="item__body">
                 <div className="item__image">
-                    <img src={props.image} alt={props.title}/>
+                    <img src={image} alt={title}/>
                 </div>
                 <div className="item__info">
                     <div className="item__title">
-                        {props.title}
+                        {title}
                     </div>
                     <div className="item__price">
                         <span className="item__cost shortcut-style">
-                            {props.price} ₽
+                            {price} ₽
                         </span>
                         <span className="item__new">
                             Новое
