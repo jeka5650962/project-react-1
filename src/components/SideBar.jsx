@@ -24,28 +24,28 @@ function SideBar() {
                     <label className="cameras__brand-label">
                         <input type="checkbox" name="brand-canon" className="real-checkbox"/>
                         <span className="custom-checkbox"/>
-                        Canon
+                        Olympus
                     </label>
                 </div>
                 <div className="cameras__brand">
                     <label className="cameras__brand-label">
-                        <input type="checkbox" name="brand-nikon" className="real-checkbox" checked/>
-                        <span className="custom-checkbox"/>
-                        Nikon
-                    </label>
-                </div>
-                <div className="cameras__brand">
-                    <label className="cameras__brand-label">
-                        <input type="checkbox" name="brand-sony" className="real-checkbox" disabled/>
+                        <input type="checkbox" name="brand-nikon" className="real-checkbox"/>
                         <span className="custom-checkbox"/>
                         Sony
                     </label>
                 </div>
                 <div className="cameras__brand">
                     <label className="cameras__brand-label">
-                        <input type="checkbox" name="brand-panasonic" className="real-checkbox" checked disabled/>
+                        <input type="checkbox" name="brand-sony" className="real-checkbox"/>
                         <span className="custom-checkbox"/>
-                        Olympus
+                        Fujifilm
+                    </label>
+                </div>
+                <div className="cameras__brand">
+                    <label className="cameras__brand-label">
+                        <input type="checkbox" name="brand-panasonic" className="real-checkbox"/>
+                        <span className="custom-checkbox"/>
+                        Nikon
                     </label>
                 </div>
             </div>
