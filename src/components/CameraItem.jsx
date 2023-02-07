@@ -1,4 +1,12 @@
+import {useState} from 'react'
+
 function CameraItem({title, price, image}) {
+    const [count, setCount] = useState(0)
+
+    const onClickButton = () => {
+        setCount(count + 1)
+    }
+
     return (
         <div className="cameras__item item">
             <div className="item__body">
@@ -18,9 +26,12 @@ function CameraItem({title, price, image}) {
                         </span>
                     </div>
                     <div className="item__bottom">
-                        <button className="item__btn">
+                        <button onClick={onClickButton} className="item__btn">
                             В корзину
                         </button>
+                        <span>
+                            {count}
+                        </span>
                         <div className="item__like"></div>
                     </div>
                 </div>
