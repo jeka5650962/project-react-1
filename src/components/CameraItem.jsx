@@ -1,7 +1,7 @@
-import {useState} from 'react'
+import React from 'react'
 
 function CameraItem({title, price, image}) {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = React.useState(0)
 
     const onClickButton = () => {
         setCount(count + 1)
