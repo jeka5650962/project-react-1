@@ -125,7 +125,7 @@
     display: inline-block;
     width: 10px;
     height: 9px;
-    background-image: url("./icons/check.svg");
+    background-image: url("assets/icons/check.svg");
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -254,7 +254,7 @@
 }
 
 .item__like {
-    background: url("./icons/like-stroke.svg") 0 0 no-repeat;
+    background: url("assets/icons/like-stroke.svg") 0 0 no-repeat;
     width: 21px;
     height: 18px;
     cursor: pointer;
@@ -266,7 +266,7 @@
 }
 
 .item__like.active {
-    background: url("./icons/like-active.svg") 0 0 no-repeat;
+    background: url("assets/icons/like-active.svg") 0 0 no-repeat;
 }
 
 /* ----------------------------------- @media ----------------------------------- */
