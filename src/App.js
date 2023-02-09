@@ -3,6 +3,18 @@ import SideBar from './components/SideBar'
 import CameraItem from './components/CameraItem'
 
 function App() {
+
+    const cameras = [
+        {title: 'Olympus OM-D E-M5', price: 28000, image: 'images/photos/photo-1.jpg', like: false},
+        {title: 'Sony Alpha ILCE-A7M2 A7 mark II', price: 118000, image: 'images/photos/photo-2.jpg', like: false},
+        {title: 'Fujifilm X-T20', price: 12500, image: 'images/photos/photo-3.jpg', like: false},
+        {title: 'Fujifilm X-T20', price: 15000, image: 'images/photos/photo-4.jpg', like: false},
+        {title: 'Nikon d61 Kit 70mm f/1.4', price: 19000, image: 'images/photos/photo-5.jpg', like: false},
+        {title: 'Nikon d61 Kit 70mm f/1.4', price: 96000, image: 'images/photos/photo-6.jpg', like: false},
+        {title: 'Fujifilm X-A1', price: 19000, image: 'images/photos/photo-7.jpg', like: false},
+        {title: 'Fujifilm X10 Back', price: 96000, image: 'images/photos/photo-8.jpg', like: false},
+    ]
+
     return (
         <div className="wrapper">
             <main className="page">
@@ -11,46 +23,15 @@ function App() {
                         <div className="cameras__body">
                             <SideBar/>
                             <div className="cameras__items">
-                                <CameraItem
-                                    title={'Olympus OM-D E-M5'}
-                                    price={28000}
-                                    image={'images/photos/photo-1.jpg'}
-                                    like={false}/>
-                                <CameraItem
-                                    title={'Sony Alpha ILCE-A7M2 A7 mark II'}
-                                    price={118000}
-                                    image={'images/photos/photo-2.jpg'}
-                                    like={false}/>
-                                <CameraItem
-                                    title={'Fujifilm X-T20'}
-                                    price={12500}
-                                    image={'images/photos/photo-3.jpg'}
-                                    like={false}/>
-                                <CameraItem
-                                    title={'Fujifilm X-T20'}
-                                    price={15000}
-                                    image={'images/photos/photo-4.jpg'}
-                                    like={false}/>
-                                <CameraItem
-                                    title={'Nikon d61 Kit 70mm f/1.4'}
-                                    price={19000}
-                                    image={'images/photos/photo-5.jpg'}
-                                    like={false}/>
-                                <CameraItem
-                                    title={'Nikon d61 Kit 70mm f/1.4'}
-                                    price={96000}
-                                    image={'images/photos/photo-6.jpg'}
-                                    like={false}/>
-                                <CameraItem
-                                    title={'Fujifilm X-A1'}
-                                    price={19000}
-                                    image={'images/photos/photo-7.jpg'}
-                                    like={false}/>
-                                <CameraItem
-                                    title={'Fujifilm X10 Back'}
-                                    price={96000}
-                                    image={'images/photos/photo-8.jpg'}
-                                    like={false}/>
+                                {
+                                    cameras.map(item => (
+                                        <CameraItem title={item.title}
+                                                    price={item.price}
+                                                    image={item.image}
+                                                    like={item.like}
+                                        />
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
