@@ -1,10 +1,16 @@
 import React from 'react'
 
-function CameraItem({title, price, image}) {
+function CameraItem({title, price, image, like}) {
     const [count, setCount] = React.useState(0)
 
     const onClickButton = () => {
         setCount(count + 1)
+    }
+
+    const [liked, setLiked] = React.useState(like)
+
+    const onClickLike = () => {
+        setLiked(!liked)
     }
 
     return (
@@ -32,7 +38,8 @@ function CameraItem({title, price, image}) {
                         <span>
                             {count}
                         </span>
-                        <div className="item__like"></div>
+                        <div onClick={onClickLike}
+                             className={liked === true ? 'item__like active' : 'item__like'}></div>
                     </div>
                 </div>
             </div>
