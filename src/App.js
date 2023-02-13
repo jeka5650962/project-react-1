@@ -14,7 +14,7 @@ function App() {
                             <div className="cameras__items">
                                 {
                                     cameras.map(item => (
-                                        <CameraItem {...item}/>
+                                        <CameraItem key={item.id} {...item}/>
                                     ))
                                 }
                             </div>
