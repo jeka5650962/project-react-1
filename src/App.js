@@ -4,7 +4,6 @@ import CameraItem from "./components/CameraItem"
 import cameras from "./assets/cameras.json"
 
 function App() {
-
     return (
         <div className="wrapper">
             <main className="page">
