@@ -15,13 +15,7 @@ function App() {
                             <div className="cameras__items">
                                 {
                                     cameras.map(item => (
-                                        <CameraItem
-                                            key={item.id}
-                                            title={item.title}
-                                            price={item.price}
-                                            image={item.image}
-                                            like={item.like}
-                                        />
+                                        <CameraItem {...item}/>
                                     ))
                                 }
                             </div>
