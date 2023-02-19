@@ -4,6 +4,14 @@ import CameraItem from "./components/CameraItem"
 import cameras from "./assets/cameras.json"
 
 function App() {
+    fetch('https://63f1fa824f17278c9a1dae33.mockapi.io/cameras')
+        .then(response => {
+            return response.json()
+        })
+        .then(json => {
+            console.log(json)
+        })
+
     return (
         <div className="wrapper">
             <main className="page">
