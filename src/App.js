@@ -8,12 +8,8 @@ function App() {
 
     React.useEffect(() => {
         fetch('https://63f1fa824f17278c9a1dae33.mockapi.io/cameras')
-            .then(response => {
-                return response.json()
-            })
-            .then(json => {
-                setCameras(json)
-            })
+            .then(response => response.json())
+            .then(json => setCameras(json))
     }, [])
 
     return (
