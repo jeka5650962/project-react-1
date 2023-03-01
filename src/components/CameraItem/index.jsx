@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CameraItem({title, price, image, like}) {
+function Index({title, price, image, like}) {
     const [count, setCount] = React.useState(0)
 
     const [liked, setLiked] = React.useState(like)
@@ -39,4 +39,4 @@ function CameraItem({title, price, image, like}) {
     )
 }
 
-export default CameraItem
+export default Index
